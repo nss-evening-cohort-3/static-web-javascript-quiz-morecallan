@@ -2,21 +2,26 @@ var width;
 var treeDiv = document.getElementById("tree")
 treeDiv.style.textAlign="center";
 
+var button = document.getElementById("growTree");
+button.addEventListener("click", submitInfo);
+
 
 function submitInfo() {
     var formTree = {
     height: parseInt(document.getElementById("height").value),
     symbol: document.getElementById("symbol").value     
     };
+    console.log(formTree)
     checkShit(formTree);
     return formTree;
 }
 
-function checkShit(formTree) {
-    if((formTree.height === NaN) || (formTree.symbol === "")) {
-        alert("You've gotta fill in a number for height!");
+
+function checkShit(myTree) {
+    if((isNaN(myTree.height) === true) || (myTree.symbol === "")) {
+        alert("You must enter a number and a symbol")
     } else {
-        buildTree(formTree);
+        buildTree(myTree);
     }
 }
 
