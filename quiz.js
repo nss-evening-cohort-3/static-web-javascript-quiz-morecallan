@@ -17,7 +17,6 @@ function submitInfo() {
     symbol: document.getElementById("symbol").value     
     };
     checkShit(formTree);
-    return formTree;
 }
 
 // Checks to make sure the user entered a number and a symbol
