@@ -8,10 +8,16 @@ function submitInfo() {
     height: parseInt(document.getElementById("height").value),
     symbol: document.getElementById("symbol").value     
     };
-    console.log("formTree", formTree);
-
-    buildTree(formTree);
+    checkShit(formTree);
     return formTree;
+}
+
+function checkShit(formTree) {
+    if((formTree.height === NaN) || (formTree.symbol === "")) {
+        alert("You've gotta fill in a number for height!");
+    } else {
+        buildTree(formTree);
+    }
 }
 
 
