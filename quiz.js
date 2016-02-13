@@ -1,9 +1,8 @@
 var width;
-var treeDiv = document.getElementById("tree");
+var characterWidth;
+var spaceWidth;
 var button = document.getElementById("growTree");
 
-// Centers tree
-treeDiv.style.textAlign="center";
 
 // Adds event listenter to button
 button.addEventListener("click", submitInfo);
@@ -28,16 +27,24 @@ function checkShit(myTree) {
     }
 }
 
-// Builds the damn tree, clearing old one
+//Builds up tree then console logs it.  
 function buildTree(tree) {
-    treeDiv.innerHTML = "";
+    width = (2*tree.height) - 1;
+    damnTree = "";
     for (var i = 0; i < tree.height; i++) {
-        width = (i*2) + 1;
-        treeDiv.innerHTML += "<p>";
-        for (var j = 0; j < width; j++) {
-            treeDiv.innerHTML += tree.symbol;
+        characterWidth = (i*2) + 1;
+        spaceWidth = (width - characterWidth)/2;
+        for (var j = 0; j < spaceWidth; j++) {
+            damnTree += " ";
         }
-        treeDiv.innerHTML += "</p>";
+        for (var x = 0; x < characterWidth; x++) {
+            damnTree += tree.symbol;
+        }
+        for (var y = 0; y < spaceWidth; y++) {
+            damnTree += " ";
+        }
+        damnTree += "\n"
     }
-}       
 
+    console.log(damnTree);
+}
