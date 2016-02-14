@@ -1,6 +1,7 @@
 var width;
 var characterWidth;
 var spaceWidth;
+var damnTree = "";
 var button = document.getElementById("growTree");
 
 
@@ -30,7 +31,6 @@ function checkShit(myTree) {
 //Builds up tree then console logs it.  
 function buildTree(tree) {
     width = (2*tree.height) - 1;
-    damnTree = "";
     for (var i = 0; i < tree.height; i++) {
         characterWidth = (i*2) + 1;
         spaceWidth = (width - characterWidth)/2;
