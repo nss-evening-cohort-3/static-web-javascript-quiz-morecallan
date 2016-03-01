@@ -34,7 +34,7 @@ function buildTree(tree) {
     for (var i = 0; i < tree.height; i++) {
         characterWidth = (i*2) + 1;
         spaceWidth = (width - characterWidth)/2;
-        for (var j = 0; j < spaceWidth; j++) {
+        for (var j = 0; j < (spaceWidth*tree.symbol.length); j++) {
             damnTree += " ";
         }
         for (var x = 0; x < characterWidth; x++) {
